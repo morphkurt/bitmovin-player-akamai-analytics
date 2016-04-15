@@ -19,8 +19,9 @@
   <link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'/>
   
   <!-- Bitmovin player -->
-  <script type="text/javascript" src="https://bitmovin-a.akamaihd.net/bitdash/latest/bitdash.min.js">
-  </script>
+  <script type="text/javascript" src="https://bitmovin-a.akamaihd.net/bitdash/latest/bitdash.min.js"></script>
+  <script type="text/javascript" src="http://79423.analytics.edgesuite.net/js/csma.js"></script>
+  <script type="text/javascript" src="AkamaiAnalytics.js"></script>
 <style>
     figure {
       margin: 0;
@@ -90,6 +91,12 @@
     }
 
     var player = bitdash('player');
+
+    // Note: Get Config Url from https://control.akamai.com/homeng/view/main (Configure > Media Analytics > Data Source > Configuration Steps:	View Steps)
+    // Should look something like http://ma1192-r.analytics.edgesuite.net/config/beacon-XXXXX.xml
+    var akamaiAnalyticsConfigUrl  = 'INSERT-CONFIG-PATH-HERE';
+    var bitdashAkamaiAnalytics    = new AkamaiAnalytics(akamaiAnalyticsConfigUrl, player, 'SomeViewerId');
+
     var conf = {
         key: 'YOUR-KEY-HERE',
         source: {
@@ -100,7 +107,8 @@
             tracks: [{
               file: 'https://bitdash-a.akamaihd.net/content/MI201109210084_1/thumbnails/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.vtt',
               kind: 'thumbnails'
-            }]
+            }],
+            title:    'Parkour'
         },
     	style: {
       		width:          '100%',
