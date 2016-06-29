@@ -1,4 +1,4 @@
-# bitmovin-player-akamai-analytics
+# Connect the Bitmovin Adaptive Streaming Player with Akamai Analytics
 
 
 ### Player Reporting Events
