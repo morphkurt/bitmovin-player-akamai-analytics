@@ -19,7 +19,7 @@
   <link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'/>
   
   <!-- Bitmovin player -->
-  <script type="text/javascript" src="https://bitmovin-a.akamaihd.net/bitdash/latest/bitdash.min.js"></script>
+  <script type="text/javascript" src="https://bitmovin-a.akamaihd.net/bitmovin-player/stable/6/bitmovinplayer.min.js"></script>
   <script type="text/javascript" src="http://79423.analytics.edgesuite.net/js/csma.js"></script>
   <script type="text/javascript" src="AkamaiAnalytics.js"></script>
 <style>
@@ -90,7 +90,7 @@
       document.getElementById('webserver-warning').style.display = 'block';
     }
 
-    var player = bitdash('player');
+    var player = bitmovin.player('player');
 
     // Note: Get Config Url from https://control.akamai.com/homeng/view/main (Configure > Media Analytics > Data Source > Configuration Steps:	View Steps)
     // Should look something like http://ma1192-r.analytics.edgesuite.net/config/beacon-XXXXX.xml
