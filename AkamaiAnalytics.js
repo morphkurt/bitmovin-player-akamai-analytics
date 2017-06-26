@@ -16,7 +16,7 @@ var AkamaiAnalytics = function(analyticsConfigUrl, player, viewerId) {
       }
       isPlayerPaused = false;
     },
-    'onPause': function() {
+    'onPaused': function() {
       akaPlugin.handlePause();
       isPlayerPaused = true;
     },
@@ -32,10 +32,10 @@ var AkamaiAnalytics = function(analyticsConfigUrl, player, viewerId) {
         }
       }
     },
-    'onStartBuffering': function() {
+    'onStallStarted': function() {
       akaPlugin.handleBufferStart();
     },
-    'onStopBuffering': function() {
+    'onStallEnded': function() {
       akaPlugin.handleBufferEnd();
     },
     'onAdStarted': function(e) {
@@ -50,9 +50,12 @@ var AkamaiAnalytics = function(analyticsConfigUrl, player, viewerId) {
     'onError': function(e) {
       akaPlugin.handleError('Error' + e.code);
     },
+    /*
+    deprecated
     'onDestroy': function() {
       akaPlugin.handleApplicationExit();
     }
+    */
   };
 
   var createAkaPluginCallback = function(player) {
