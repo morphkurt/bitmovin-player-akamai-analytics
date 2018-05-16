@@ -31,7 +31,7 @@ events: {
 }
 ```
 
-We describe this approach in more detail in the [player configuration documentation](https://bitmovin.com/player-configuration/).
+We describe this approach in more detail in the [player configuration documentation](https://developer.bitmovin.com/hc/en-us/articles/115001561533#modules/playerconfigapi.html).
 
 It is also possible to call ```addEventHandler``` with the event type and a callback function as parameter.
 
