@@ -23,7 +23,7 @@ var AkamaiAnalytics = function(analyticsConfigUrl, player, viewerId) {
     'onPlaybackFinished': function() {
       akaPlugin.handlePlayEnd("Play.End.Detected");
     },
-    'onVideoQualityChanged': function(e) {
+    'onVideoPlaybackQualityChanged': function(e) {
       var availableVideoQualities = player.getAvailableVideoQualities();
       for (q in availableVideoQualities) {
         if (availableVideoQualities[q].id === e.targetQuality) {
