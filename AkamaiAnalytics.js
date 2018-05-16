@@ -8,7 +8,7 @@ var AkamaiAnalytics = function(analyticsConfigUrl, player, viewerId) {
         akaPlugin.setData('title', player.getConfig().source.title);
       }
     },
-    'onPlay': function() {
+    'onPlaying': function() {
       if (isPlayerPaused) {
         akaPlugin.handleResume();
       } else {
