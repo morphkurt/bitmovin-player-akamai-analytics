@@ -51,5 +51,5 @@ removeEventHandler('onReady', function(data) { ... });
 ```
 
 #### Further Reading and Available Events
-More information about the <a href="https://bitmovin.com/player-api/" target="_blank">API</a> and all available <a href="https://bitmovin.com/player-api/#Available_Events" target="_blank">Events</a> can be found in our <a href="https://bitmovin.com/support/" target="_blank">support section</a>.
+More information about the <a href="https://developer.bitmovin.com/hc/en-us/articles/115001561533-Bitmovin-Player-API-Documentation-v7" target="_blank">API</a> and all available <a href="https://developer.bitmovin.com/hc/en-us/articles/115001561533#modules/events.html" target="_blank">Events</a> can be found in our <a href="https://developer.bitmovin.com/" target="_blank">support section</a>.
 
