@@ -8,7 +8,7 @@ var AkamaiAnalytics = function(analyticsConfigUrl, player, viewerId) {
         akaPlugin.setData('title', player.getConfig().source.title);
       }
     },
-    'onPlay': function() {
+    'onPlaying': function() {
       if (isPlayerPaused) {
         akaPlugin.handleResume();
       } else {
@@ -16,14 +16,14 @@ var AkamaiAnalytics = function(analyticsConfigUrl, player, viewerId) {
       }
       isPlayerPaused = false;
     },
-    'onPause': function() {
+    'onPaused': function() {
       akaPlugin.handlePause();
       isPlayerPaused = true;
     },
     'onPlaybackFinished': function() {
       akaPlugin.handlePlayEnd("Play.End.Detected");
     },
-    'onVideoPlaybackQualityChange': function(e) {
+    'onVideoPlaybackQualityChanged': function(e) {
       var availableVideoQualities = player.getAvailableVideoQualities();
       for (q in availableVideoQualities) {
         if (availableVideoQualities[q].id === e.targetQuality) {
@@ -32,10 +32,10 @@ var AkamaiAnalytics = function(analyticsConfigUrl, player, viewerId) {
         }
       }
     },
-    'onStartBuffering': function() {
+    'onStallStarted': function() {
       akaPlugin.handleBufferStart();
     },
-    'onStopBuffering': function() {
+    'onStallEnded': function() {
       akaPlugin.handleBufferEnd();
     },
     'onAdStarted': function(e) {
@@ -50,9 +50,12 @@ var AkamaiAnalytics = function(analyticsConfigUrl, player, viewerId) {
     'onError': function(e) {
       akaPlugin.handleError('Error' + e.code);
     },
+    /*
+    deprecated
     'onDestroy': function() {
       akaPlugin.handleApplicationExit();
     }
+    */
   };
 
   var createAkaPluginCallback = function(player) {
