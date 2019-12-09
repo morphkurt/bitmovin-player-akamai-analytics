@@ -1,5 +1,26 @@
 # Connect the Bitmovin Adaptive Streaming Player with Akamai Analytics
 
+### Include the standard Akamai Analytics Plugin
+
+More information is covered in the Akamai Control center
+
+JavaScript Plug-in Integration Guide>Integration Procedure>Data Management
+
+```html
+<script type="text/javascript" src="javascript_malibrary.js"></script>
+```
+
+Initiate the AkamaiAnalytics object 
+
+```html
+// Note: Get Config Url from https://control.akamai.com/homeng/view/main (Configure > Media Analytics > Data Source > Configuration Steps:	View Steps)
+// Should look something like http://ma1192-r.analytics.edgesuite.net/config/beacon-XXXXX.xml
+var akamaiAnalyticsConfigUrl  = 'INSERT-CONFIG-PATH-HERE';
+var bitdashAkamaiAnalytics    = new AkamaiAnalytics(akamaiAnalyticsConfigUrl, player, 'SomeViewerId');
+```
+
+
+
 
 ### Player Reporting Events
 Each EventHandler function takes exactly one argument: a callback function which is called when the event is fired. This callback function shall also have one argument. This is a _JSON_ object which provides additional information for the event.
